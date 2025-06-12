@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Funtime Server</title>
+  <style>
+    body {
+      background: #121212;
+      color: #f0f0f0;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #1f1f1f;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+      color: #00ffcc;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 40px;
+      padding: 20px;
+      background: #1e1e1e;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00000088;
+    }
+
+    h2 {
+      color: #00ffff;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    textarea, input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 1em;
+      border-radius: 5px;
+      border: none;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    input[type="submit"] {
+      background-color: #00ffcc;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #00ccaa;
+    }
+
+    .thanks {
+      color: #66ff99;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    🌟 Funtime Server – твоя ігрова зона!
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Чому варто грати на сервері?</h2>
+      <ul>
+        <li>🎉 Весела атмосфера</li>
+        <li>🛡️ Активна та справедлива модерація</li>
+        <li>⚒️ Унікальні плагіни та фішки</li>
+        <li>👥 Дружня спільнота</li>
+        <li>📆 Часті події та івенти</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Чому не варто грати?</h2>
+      <ul>
+        <li>⏳ Іноді буває лаги (залежить від навантаження)</li>
+        <li>🔧 Нові фічі ще не стабільні (але активно допрацьовуються)</li>
+        <li>👶 Новачкам може бути складно з першого разу</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Поділись думкою про модерацію:</h2>
+      <form id="feedbackForm">
+        <label for="feedback">Що ти думаєш про модераторів?</label>
+        <textarea id="feedback" name="feedback" required placeholder="Напиши чесно 😉"></textarea>
+        <input type="submit" value="Надіслати" />
+        <div class="thanks" id="thanksMessage" style="display:none;">Дякуємо за відгук!</div>
+      </form>
+    </section>
+
+  </main>
+
+  <script>
+    document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const message = document.getElementById("thanksMessage");
+      message.style.display = "block";
+      setTimeout(() => {
+        message.style.display = "none";
+      }, 5000);
+      this.reset(); // очищає форму
+    });
+  </script>
+
+</body>
+</html>
